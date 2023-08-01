@@ -11,15 +11,14 @@ public class EmployeeConsumeServiceImpl implements EmployeeConsumeService{
 	@Override
 	public Employee employeeConsume() {
 		// TODO Auto-generated method stub
-		Employee employee = consume(new Employee());
-		return employee;
+		
+		return null;
 	}
 
 	@KafkaListener(topics = "topicone",groupId = "rest_one")
-	public Employee consume(Employee employee) {
+	public void consume(Employee employee) {
 		System.out.println("Employee Consumed Data : " +  employee);
-	   return employee;
+	     
 	}
-	
 	
 }

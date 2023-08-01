@@ -10,8 +10,8 @@ import com.example.demo.model.Employee;
 @Service
 public class EMployeeServiceImpl implements EmployeeService{
 
-	@Value(value = "${topic.name}")
-	private String topic;
+	//@Value(value = "${topic.name}")
+	//private String topic;
 	
 	@Autowired
 	private KafkaTemplate<String, Employee> kafkaTemplate;
@@ -20,7 +20,7 @@ public class EMployeeServiceImpl implements EmployeeService{
 	public void employeeDataublish(Employee employee) {
 		// TODO Auto-generated method stub
 		System.out.println("Kafka Producer Start.");
-		kafkaTemplate.send(topic, employee);
+		kafkaTemplate.send("topicone", employee);
 		System.out.println("Kafka Producer End.");
 	}
 
