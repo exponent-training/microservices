@@ -1,0 +1,12 @@
+{
+    "bid":1,
+    "bname":"IBA Bank India",
+    "baddr":"Jadhav Chambers Commercial Complex, Old Mumbai - Pune Hwy, opposite Formica Company, Nigdi, Pimpri-Chinchwad, Maharashtra 411035",
+    "branchcode":"MHIBA001",
+    "ifsccode":"MHIBA0000001",
+    "micrcode":"MHIBA1000000",
+    "email":"IBA-01@gmail.com",
+    "contactno":"+(020) 854 854 8444",
+    "zipcode":"411035",
+    "faxno":"IBA411035"
+}
