@@ -1,10 +1,14 @@
 package com.iba.main.userservice.model;
 
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
+import com.iba.main.userservice.enumdata.Status;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -42,6 +46,11 @@ public class UserEntity {
 	private String uname;
 	
 	private String pass;
+	
+	@Enumerated(EnumType.STRING)
+	private Status status;
+	
+	
 	
 	
 }
