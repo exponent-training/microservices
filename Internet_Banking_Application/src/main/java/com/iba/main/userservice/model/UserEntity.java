@@ -1,11 +1,13 @@
 package com.iba.main.userservice.model;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import com.iba.main.userservice.enumdata.Status;
@@ -50,7 +52,10 @@ public class UserEntity {
 	@Enumerated(EnumType.STRING)
 	private Status status;
 	
+	@OneToOne(cascade = CascadeType.ALL)
+	private PermanentAddress permanentAddress;
 	
-	
-	
+	@OneToOne(cascade = CascadeType.ALL)
+	private TemparoryAddress temparoryAddress;
+
 }

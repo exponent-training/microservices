@@ -6,4 +6,9 @@ public interface UserEntityService {
 	
 	void saveUserEntityData(UserEntity userEntity);
 
+	UserEntity getUserEntity(Long id);
+	
+	UserEntity updateUserService(UserEntity userEntity);
+	
+	void deleteUserEntityData(Long id);
 }
