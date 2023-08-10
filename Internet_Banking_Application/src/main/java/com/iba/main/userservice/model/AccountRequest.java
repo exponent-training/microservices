@@ -9,7 +9,7 @@ import lombok.ToString;
 @Setter
 @Getter
 @AllArgsConstructor
-@NoArgsConstructor
+//@NoArgsConstructor
 @ToString
 public class AccountRequest {
 	
@@ -24,6 +24,8 @@ public class AccountRequest {
 	private String bankname;
 	
 	private String bankcode;
+	
+	private double amount;
 	
 
 }

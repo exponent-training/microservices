@@ -8,4 +8,5 @@ import com.iba.main.userservice.model.BankDetails;
 @Repository
 public interface BankDetailsRepository extends JpaRepository<BankDetails, Long>{
 
+	BankDetails findByBnameAndBranchcode(String bname,String bcode);
 }

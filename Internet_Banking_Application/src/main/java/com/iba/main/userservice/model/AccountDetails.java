@@ -25,7 +25,7 @@ import lombok.ToString;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
-//@Entity
+@Entity
 public class AccountDetails {
 
 	@Id
@@ -44,11 +44,11 @@ public class AccountDetails {
 
 	private Double actualBalance;
 
-	//@ManyToOne(cascade = CascadeType.ALL)
-	//@JoinColumn(name = "user_id")
+	@ManyToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "user_id")
 	private UserEntity user;
 	
-	//@OneToOne(cascade = {CascadeType.DETACH})
+	@OneToOne(cascade = {CascadeType.DETACH})
 	private BankDetails bankDetails;
 	
 	private String updatedby;
