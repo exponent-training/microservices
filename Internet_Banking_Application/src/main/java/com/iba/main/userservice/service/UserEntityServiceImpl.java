@@ -1,5 +1,8 @@
 package com.iba.main.userservice.service;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -42,6 +45,17 @@ public class UserEntityServiceImpl implements UserEntityService{
 		UserEntity userEntity = userEntityRepository.findById(id).get();
 		userEntity.setStatus(Status.DISEABLED);
 		userEntityRepository.save(userEntity);
+	}
+
+	@Override
+	public List<String> getAllUsernames() {
+		// TODO Auto-generated method stub
+		List<String> list = new ArrayList<String>();
+		List<UserEntity> ulist = userEntityRepository.findAll();
+		for (UserEntity userEntity : ulist) {
+			list.add(userEntity.getUname());
+		}
+		return list;
 	}
 
 }

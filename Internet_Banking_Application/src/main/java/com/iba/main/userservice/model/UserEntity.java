@@ -57,5 +57,8 @@ public class UserEntity {
 	
 	@OneToOne(cascade = CascadeType.ALL)
 	private TemparoryAddress temparoryAddress;
+	
+	@OneToOne(cascade = CascadeType.DETACH)
+	private Role role;
 
 }

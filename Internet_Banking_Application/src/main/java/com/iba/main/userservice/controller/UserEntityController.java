@@ -1,5 +1,7 @@
 package com.iba.main.userservice.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -42,6 +44,12 @@ public class UserEntityController {
 	public ResponseEntity<String> getDeletedEntity(@PathVariable Long id){
 		userEntityService.deleteUserEntityData(id);
 		return ResponseEntity.ok("Your Service is Blocked.");
+	}
+	
+	@GetMapping(value = "/getAllUsername")
+	public ResponseEntity<List<String>> getAllUserNames(){
+		List<String> slist = userEntityService.getAllUsernames();
+		return ResponseEntity.ok().body(slist);
 	}
 
 }
