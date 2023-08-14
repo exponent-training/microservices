@@ -9,4 +9,6 @@ import com.iba.main.userservice.model.UserEntity;
 public interface UserEntityRepository extends JpaRepository<UserEntity, Long>{
 
 	UserEntity findByUname(String uname);
+	
+	UserEntity findByUnameAndPass(String uname,String pass);
 }

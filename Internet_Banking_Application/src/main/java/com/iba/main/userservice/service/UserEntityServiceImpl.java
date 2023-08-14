@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.iba.main.userservice.enumdata.Status;
+import com.iba.main.userservice.model.LoginResponse;
 import com.iba.main.userservice.model.UserEntity;
 import com.iba.main.userservice.repo.UserEntityRepository;
 
@@ -56,6 +57,22 @@ public class UserEntityServiceImpl implements UserEntityService{
 			list.add(userEntity.getUname());
 		}
 		return list;
+	}
+
+	@Override
+	public LoginResponse getLoginData(String uname, String pass) {
+		// TODO Auto-generated method stub
+		LoginResponse loginResponse = new LoginResponse();
+		UserEntity userEntity =  userEntityRepository.findByUnameAndPass(uname, pass);
+		if(userEntity != null && userEntity.getRole() != null) {
+			loginResponse.setFname(userEntity.getFname());
+			loginResponse.setLname(userEntity.getLname());
+			loginResponse.setEmail(userEntity.getEmail());
+			loginResponse.setRolename(userEntity.getRole().getRoleName());
+			//loginResponse.setStatus(userEntity.getStatus());
+			return loginResponse;
+		}
+		return null;
 	}
 
 }
